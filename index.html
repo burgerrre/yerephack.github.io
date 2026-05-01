@@ -15,9 +15,7 @@
             --secondary-text: #888888;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-color);
@@ -28,11 +26,7 @@
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         header {
             padding: 20px 0;
@@ -64,15 +58,9 @@
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+        nav a:hover { color: var(--accent-color); }
 
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-        }
-
+        .hero { padding: 100px 0; text-align: center; }
         .hero h1 {
             font-size: 64px;
             margin: 0;
@@ -80,13 +68,6 @@
             background: linear-gradient(180deg, #fff 0%, #444 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            color: var(--secondary-text);
-            font-size: 18px;
-            max-width: 600px;
-            margin: 20px auto;
         }
 
         .btn {
@@ -101,11 +82,7 @@
             transition: 0.3s;
             text-decoration: none;
             display: inline-block;
-        }
-
-        .btn:hover {
-            box-shadow: 0 0 20px rgba(255, 62, 62, 0.4);
-            transform: translateY(-2px);
+            margin-top: 20px;
         }
 
         .section-title {
@@ -115,46 +92,77 @@
             text-transform: uppercase;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        /* SPACE SECTION STYLES */
+        #info {
+            position: relative;
+            min-height: 600px;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0b0b0b 100%);
+            overflow: hidden;
+            border-radius: 20px;
             margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .card {
+        #space-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .orbit-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            perspective: 1000px;
+        }
+
+        .center-dev {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(255, 62, 62, 0.8);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .center-dev span {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        .orbit-user {
+            position: absolute;
+            color: #fff;
+            font-weight: 700;
+            white-space: nowrap;
+            pointer-events: none;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        .game-card {
             background-color: var(--card-bg);
             border: 1px solid #1f1f1f;
-            padding: 30px;
+            padding: 40px;
             border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--accent-color);
-        }
-
-        .card h3 {
-            font-size: 20px;
-            margin: 0 0 15px;
-            color: var(--accent-color);
-        }
-
-        .user-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .user-tag {
-            background: #1a1a1a;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 13px;
-            color: #ccc;
-            border: 1px solid #333;
+            text-align: center;
+            width: 300px;
+            margin: 0 auto 100px;
         }
 
         .status {
@@ -193,45 +201,109 @@
 <div class="container">
     <section class="hero">
         <h1>Yerephack</h1>
-        <p>Премиальное программное обеспечение для комфортной игры. Будь на шаг впереди всех.</p>
+        <p>Премиальное программное обеспечение. Будь на шаг впереди всех.</p>
         <a href="https://t.me/standleomvm" target="_blank" class="btn">Получить доступ</a>
     </section>
 
     <h2 class="section-title">Работает в этих играх</h2>
-    <div style="display: flex; justify-content: center; margin-bottom: 80px;">
-        <div class="card" style="width: 300px; text-align: center;">
-            <h3>Standleo</h3>
-            <p style="color: var(--secondary-text);">Полная поддержка всех функций в приватном сервере Standleo.</p>
-            <div class="status">В СЕТИ</div>
-        </div>
+    <div class="game-card">
+        <h3>Standleo</h3>
+        <p style="color: var(--secondary-text);">Полная поддержка функций в приватном сервере.</p>
+        <div class="status">В СЕТИ</div>
     </div>
 
-    <h2 id="info" class="section-title">Информация</h2>
-    <div class="info-grid">
-        <div class="card">
-            <h3>Разработчики</h3>
-            <p><strong>Yerep</strong> — Разработчик чита</p>
-            <p><strong>Gemini</strong> — Разработчик сайта</p>
-        </div>
-        <div class="card">
-            <h3>The best people on this planet</h3>
-            <p style="margin-bottom: 15px; color: var(--secondary-text);">Юзеры Yerephack:</p>
-            <div class="user-list">
-                <span class="user-tag">Budine</span>
-                <span class="user-tag">ItzQbit</span>
-                <span class="user-tag">Daggerfolskiy</span>
-                <span class="user-tag">Жынка</span>
-                <span class="user-tag">Fuck society</span>
+    <h2 class="section-title">Информация о проекте</h2>
+    <section id="info">
+        <canvas id="space-canvas"></canvas>
+        
+        <div class="orbit-container" id="orbit-scene">
+            <div class="center-dev">
+                Yerep
+                <span>Developer</span>
             </div>
+            </div>
+        
+        <div style="z-index: 5; text-align: center; margin-top: 20px; color: #888;">
+            <p>Site by Gemini | <b>The best people on this planet</b></p>
         </div>
-    </div>
+    </section>
 </div>
 
 <footer>
-    <div class="container">
-        &copy; 2026 Yerephack Project. Все права защищены.
-    </div>
+    <div class="container">&copy; 2026 Yerephack Project. Все права защищены.</div>
 </footer>
+
+<script>
+    // Звездное небо
+    const canvas = document.getElementById('space-canvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resize() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+
+    function createStars() {
+        stars = [];
+        for(let i=0; i<150; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2,
+                speed: Math.random() * 0.5
+            });
+        }
+    }
+
+    function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#fff';
+        stars.forEach(star => {
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI*2);
+            ctx.fill();
+            star.y -= star.speed;
+            if(star.y < 0) star.y = canvas.height;
+        });
+        requestAnimationFrame(drawStars);
+    }
+
+    // Вращение ников
+    const users = ['Budine', 'ItzQbit', 'Daggerfolskiy', 'Жынка', 'Fuck society'];
+    const scene = document.getElementById('orbit-scene');
+    
+    users.forEach((name, index) => {
+        const el = document.createElement('div');
+        el.className = 'orbit-user';
+        el.innerText = name;
+        scene.appendChild(el);
+        
+        let angle = (index / users.length) * Math.PI * 2;
+        const radiusX = 250; 
+        const radiusY = 80;
+        
+        function animate() {
+            angle += 0.01;
+            const x = Math.cos(angle) * radiusX;
+            const z = Math.sin(angle) * 100; // Для эффекта глубины
+            const y = Math.sin(angle) * radiusY;
+            
+            const scale = (z + 200) / 300;
+            el.style.transform = `translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`;
+            el.style.opacity = scale;
+            el.style.zIndex = z > 0 ? 20 : 1;
+            
+            requestAnimationFrame(animate);
+        }
+        animate();
+    });
+
+    window.addEventListener('resize', resize);
+    resize();
+    createStars();
+    drawStars();
+</script>
 
 </body>
 </html>
