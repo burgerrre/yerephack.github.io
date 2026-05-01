@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yerephack | Лучший приватный чит</title>
+    <title>Yerephack | Official</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
@@ -13,6 +13,10 @@
             --card-bg: #121212;
             --text-color: #ffffff;
             --secondary-text: #888888;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -36,6 +40,11 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #1f1f1f;
+            position: sticky;
+            top: 0;
+            background: rgba(11, 11, 11, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
         }
 
         .logo {
@@ -106,30 +115,46 @@
             text-transform: uppercase;
         }
 
-        .games-grid {
-            display: flex;
-            justify-content: center;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 100px;
         }
 
-        .game-card {
+        .card {
             background-color: var(--card-bg);
             border: 1px solid #1f1f1f;
-            padding: 40px;
+            padding: 30px;
             border-radius: 8px;
-            text-align: center;
-            width: 300px;
             transition: 0.3s;
         }
 
-        .game-card:hover {
+        .card:hover {
             border-color: var(--accent-color);
         }
 
-        .game-card h3 {
-            font-size: 24px;
-            margin: 0 0 10px;
+        .card h3 {
+            font-size: 20px;
+            margin: 0 0 15px;
+            color: var(--accent-color);
+        }
+
+        .user-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .user-tag {
+            background: #1a1a1a;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #ccc;
+            border: 1px solid #333;
         }
 
         .status {
@@ -159,8 +184,8 @@
         <div class="logo">Yerephack</div>
         <nav>
             <a href="#">Главная</a>
-            <a href="#">Функции</a>
-            <a href="#">Получить</a>
+            <a href="#info">Info</a>
+            <a href="https://t.me/standleomvm" target="_blank">Получить</a>
         </nav>
     </div>
 </header>
@@ -169,15 +194,35 @@
     <section class="hero">
         <h1>Yerephack</h1>
         <p>Премиальное программное обеспечение для комфортной игры. Будь на шаг впереди всех.</p>
-        <a href="#" class="btn">Получить доступ</a>
+        <a href="https://t.me/standleomvm" target="_blank" class="btn">Получить доступ</a>
     </section>
 
     <h2 class="section-title">Работает в этих играх</h2>
-    <div class="games-grid">
-        <div class="game-card">
+    <div style="display: flex; justify-content: center; margin-bottom: 80px;">
+        <div class="card" style="width: 300px; text-align: center;">
             <h3>Standleo</h3>
-            <p style="color: var(--secondary-text);">Полная поддержка всех функций чита в приватном сервере Standleo.</p>
+            <p style="color: var(--secondary-text);">Полная поддержка всех функций в приватном сервере Standleo.</p>
             <div class="status">В СЕТИ</div>
+        </div>
+    </div>
+
+    <h2 id="info" class="section-title">Информация</h2>
+    <div class="info-grid">
+        <div class="card">
+            <h3>Разработчики</h3>
+            <p><strong>Yerep</strong> — Разработчик чита</p>
+            <p><strong>Gemini</strong> — Разработчик сайта</p>
+        </div>
+        <div class="card">
+            <h3>The best people on this planet</h3>
+            <p style="margin-bottom: 15px; color: var(--secondary-text);">Юзеры Yerephack:</p>
+            <div class="user-list">
+                <span class="user-tag">Budine</span>
+                <span class="user-tag">ItzQbit</span>
+                <span class="user-tag">Daggerfolskiy</span>
+                <span class="user-tag">Жынка</span>
+                <span class="user-tag">Fuck society</span>
+            </div>
         </div>
     </div>
 </div>
